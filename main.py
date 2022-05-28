@@ -83,7 +83,7 @@ def main():
         )
     parser.add_argument(
         '-n', '--number', type=int,
-        default=5, help='muber of aspects in summarization'
+        default=5, help='number of aspects in summarization'
         )
     parser.add_argument(
         '-t', '--test', type=bool,
@@ -138,6 +138,8 @@ def main():
                                mode_s,
                                args.spellchecking,
                                args.stopwords)
+        # processing returns different number of variables
+        # it depends on mode
         if len(processed) > 3:
             aspects = extract_aspects(*processed[:3],
                                       mode_a,

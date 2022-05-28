@@ -8,11 +8,10 @@ def summarize(sent, number):
     Summarize reviews by aspects.
     '''
 
-    # stat collocs do not have rankings?
-
-    # print('Len sent', len(sent))
-
-    if isinstance(sent[0], dict):
+    # extract_aspects returns different types of data
+    # depending on modes
+    # to parse data correctly we need to prove data types
+    if isinstance(sent[0], dict):  # Weirdness, Chi-square, Frequencies
 
         list_important_pos = []
         for s in sent[:3]:
@@ -26,7 +25,7 @@ def summarize(sent, number):
             important_neg = sorted_keys_neg[:number]
             list_important_neg += important_neg
 
-    if isinstance(sent[0], list):
+    if isinstance(sent[0], list):  # TF-IDF, LDA, Statistic collocations
         if isinstance(sent[0][0], dict):
             if len(sent) > 2:
                 list_important_pos = []
@@ -56,7 +55,7 @@ def summarize(sent, number):
                     important = sorted_keys[:number]
                     list_important_neg += important
 
-        else:
+        else:  # Statistic collocations (pre-defined ranking)
 
             list_important_pos = []
             for s in sent[:3]:

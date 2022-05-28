@@ -9,6 +9,9 @@ All of the needed libraries and frameworks listed in the file `requirements.txt`
 * `import stanza`
 * `stanza.download('ru')`
 
+## Data
+* [Camera reviews](https://docs.google.com/document/d/1UFKFkAzN_dZ-XJM-tcQpicTRADejNLtN_CdaKoApYCg/edit?usp=sharing)
+
 ## Installation and running
 Run the code with `main.py`:
 * `python3 main.py -h` gives you needed attributes
