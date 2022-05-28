@@ -1,0 +1,4 @@
+stanza
+nltk
+gensim
+jamspell
